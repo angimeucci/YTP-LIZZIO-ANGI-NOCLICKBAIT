@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <title>SAAAS</title>
+    <style>
+        body {
+            background-color: rgb(27, 27, 27);
+            color: white;
+        }
+    </style>
+
+    <script>
+        var map = new Object();
+        map["Inter-Torinter"] = "9C_tRa1LkRA";
+        map["Juvapoli-Napentus"] = "Ae2Cu-KzB10";
+        map["Torino-Interino"] = "Qztv8V4lIUg";
+        map["Atalazio-Lanta"] = "H4oMrSGqoNE";
+        map["Juvino-Torentus"] = "C7Q5ECxvYxs";
+        map["Juuuve"] = "-VowsIrCEDU";
+
+        function get(k) {
+            return map[k];
+        }
+
+        function loadall() {
+            document.getElementById("tabellatotale").style.display = "none";
+            document.getElementById("video").style.display = "none";
+            document.getElementById("tabellatotale").style.display = "block";
+        }
+
+        function writep() {
+            document.getElementById("writethere").style.display = "block";
+            document.getElementById("video").style.display = "none";
+            var string = "";
+            for (var i in map) {
+                string += i + "\n";
+                document.getElementById("writethere").innerHTML = string;
+            }
+        }
+
+        function videoondisplay() {
+            try {
+                ytpoop = document.getElementById("input").value;
+                document.getElementById("video").src = "https://www.youtube.com/embed/" + map[ytpoop];
+
+                document.getElementById("writethere").style.display = "none";
+                document.getElementById("video").style.display = "block";
+
+            } catch (e) {
+                document.getElementById("writethere").innerHTML = "YTPOOP NOT FOUND";
+            }
+        }
+    </script>
+</head>
+
+<body onload="loadall()">
+    <br><br><br><br>
+    <center>
+        <div id="tabellatotale">
+            <input placeholder="  YTPOOP Here" id="input">
+            <button onclick="writep()">?</button>
+            <button onclick="videoondisplay()">LESGO</button>
+
+            <br><br><br>
+
+            <p id="writethere"></p>
+        </div>
+        <iframe width="600" height="400" src="" id="video"></iframe>
+    </center>
+</body>
+
+</html>
