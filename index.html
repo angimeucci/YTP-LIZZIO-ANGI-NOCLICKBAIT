@@ -31,11 +31,12 @@
         function writep() {
             document.getElementById("writethere").style.display = "block";
             document.getElementById("video").style.display = "none";
-            var string = "";
+            var string = "<center> Type one of these titles into search tab";
             for (var i in map) {
-                string += i + "\n";
-                document.getElementById("writethere").innerHTML = string;
+                string += i + "<br>";
             }
+            string += "</center>";
+            document.getElementById("writethere").innerHTML = string;
         }
 
         function videoondisplay() {
